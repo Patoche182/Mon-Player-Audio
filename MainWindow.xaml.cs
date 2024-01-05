@@ -20,5 +20,10 @@ namespace Mon_Player_Audio
         {
             InitializeComponent();
         }
+
+        private void OpenFile_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -12,7 +12,21 @@
             <GradientStop Color="#FF00FFF9" Offset="0.9"/>
         </LinearGradientBrush>
     </Window.Background>
-    <Grid>
+    <WrapPanel>
+        
+        <TextBox Name="FilmePath" Width="150" Height="30" Text="Ouvir un fichier mp3..." Margin="20"/>
+        
+        <Button Name="OpenFile" Content="Ouvrir" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="25" Click="OpenFile_Click" Foreground="White" FontWeight="Bold" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFE400FD" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        
+    </WrapPanel>
 
-    </Grid>
+
+
 </Window>
