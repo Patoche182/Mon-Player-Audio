@@ -30,7 +30,7 @@ namespace Mon_Player_Audio
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Filter = "MP3 files (*.mp3)|*.mp3|All files (*.*)|*.*";
 
-            if(fileDialog.ShowDialog() == true)
+            if (fileDialog.ShowDialog() == true)
             {
                 player.Open(new System.Uri(fileDialog.FileName));
                 player.Play();
@@ -51,6 +51,11 @@ namespace Mon_Player_Audio
         private void Stop_Click(object sender, RoutedEventArgs e)
         {
             player.Stop();
+        }
+
+        private void Vol_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            player.Volume = Vol.Value / 100;
         }
     }
 }

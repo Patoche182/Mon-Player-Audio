@@ -60,6 +60,10 @@
             </Button.Background>
         </Button>
 
+        <Slider Margin="20" Name="Vol" Width="450" Minimum="0" Maximum="100" Value="50" Background="#FF007371" Foreground="#FFEA0303" BorderBrush="#FFEC1010" OpacityMask="Black" ValueChanged="Vol_ValueChanged">
+            
+        </Slider>
+
     </WrapPanel>
 
 </Window>
