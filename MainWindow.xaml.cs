@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using Microsoft.Win32;
+using System.Runtime.CompilerServices;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,6 +18,8 @@ namespace Mon_Player_Audio
     /// </summary>
     public partial class MainWindow : Window
     {
+        public MediaPlayer player = new MediaPlayer();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -23,7 +27,15 @@ namespace Mon_Player_Audio
 
         private void OpenFile_Click(object sender, RoutedEventArgs e)
         {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "MP3 files (*.mp3) | *.mp3 | All files (*.*) | *.*";
 
+            if(fileDialog.ShowDialog() == true)
+            {
+                player.Open(new System.Uri(fileDialog.FileName));
+                player.Play();
+                FilePath.Text = fileDialog.FileName;
+            }
         }
     }
 }

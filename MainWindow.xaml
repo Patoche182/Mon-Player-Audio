@@ -13,9 +13,17 @@
         </LinearGradientBrush>
     </Window.Background>
     <WrapPanel>
-        
-        <TextBox Name="FilmePath" Width="150" Height="30" Text="Ouvir un fichier mp3..." Margin="20"/>
-        
+
+        <Label Content="Player Audio" Width="700" Height="58" FontSize="24" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF65E400" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <TextBox Name="FilePath" Width="330" Height="25" Text="Ouvir un fichier mp3..." VerticalAlignment="Center" Margin="10"/>
+
         <Button Name="OpenFile" Content="Ouvrir" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="25" Click="OpenFile_Click" Foreground="White" FontWeight="Bold" >
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -24,7 +32,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        
+
     </WrapPanel>
 
 
