@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Mon_Player_Audio
 {
@@ -23,6 +24,21 @@ namespace Mon_Player_Audio
         public MainWindow()
         {
             InitializeComponent();
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += Update;
+            timer.Start();
+
+        }
+
+        private void Update(object sender, EventArgs e)
+        {
+            if (player.Source != null)
+            {
+                prog.Minimum = 0;
+                prog.Maximum = player.NaturalDuration.TimeSpan.TotalSeconds;
+                prog.Value = player.Position.TotalSeconds;
+            }
         }
 
         private void OpenFile_Click(object sender, RoutedEventArgs e)
