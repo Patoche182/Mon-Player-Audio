@@ -28,7 +28,7 @@ namespace Mon_Player_Audio
         private void OpenFile_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Filter = "MP3 files (*.mp3) | *.mp3 | All files (*.*) | *.*";
+            fileDialog.Filter = "MP3 files (*.mp3)|*.mp3|All files (*.*)|*.*";
 
             if(fileDialog.ShowDialog() == true)
             {
@@ -36,6 +36,21 @@ namespace Mon_Player_Audio
                 player.Play();
                 FilePath.Text = fileDialog.FileName;
             }
+        }
+
+        private void Play_Click(object sender, RoutedEventArgs e)
+        {
+            player.Play();
+        }
+
+        private void Pause_Click(object sender, RoutedEventArgs e)
+        {
+            player.Pause();
+        }
+
+        private void Stop_Click(object sender, RoutedEventArgs e)
+        {
+            player.Stop();
         }
     }
 }
