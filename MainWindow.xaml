@@ -15,18 +15,25 @@
     <WrapPanel>
 
         <!-- Zone Ouvrir un fichier -->
-        <Label Content="Player Audio" Width="500" Height="50" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-            <Label.Foreground>
+        <Label Content="Player Audio" Width="500" Height="50" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#FF6DCD00">
+            <Label.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="#FF003EFF" Offset="1"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF5000E1" Offset="0"/>
                 </LinearGradientBrush>
-            </Label.Foreground>
+            </Label.Background>
         </Label>
         <TextBox Margin="10" Name="FilePath" Width="300" Height="25" Text="Ouvir un fichier mp3..." VerticalAlignment="Center"/>
 
         <!-- Bouton OPEN -->
-        <Button Margin="10" Name="OpenFile" Content="Ouvrir" HorizontalAlignment="Center" VerticalAlignment="Center" Width="140" Height="25" Click="OpenFile_Click" Foreground="#FF080000" FontWeight="Bold" FontSize="14" Background="{x:Null}" BorderBrush="Black" ToolTip="Open File" Cursor="Hand" BorderThickness="2,2,2,2" />
+        <Button Margin="10" Name="OpenFile" Content="Ouvrir" HorizontalAlignment="Center" VerticalAlignment="Center" Width="140" Height="25" Click="OpenFile_Click" Foreground="White" FontWeight="Bold" FontSize="14" BorderBrush="Black" ToolTip="Open File" Cursor="Hand" BorderThickness="2,2,2,2" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5A00FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
 
         <!-- Bouton PLAY -->
         <Button Margin="10" x:Name="Play" Content="Play" HorizontalAlignment="Center" VerticalAlignment="Center" Width="140" Height="50" Click="Play_Click"  Foreground="White" FontWeight="Bold" FontSize="18" Background="Black" ToolTip="Play" />
@@ -52,23 +59,27 @@
         </Button>
 
         <!-- Sliders VOLUME -->
-        <Slider Margin="20,30,20,10" Name="Vol" Width="460" Minimum="0" Maximum="100" Value="50" Background="Black" Foreground="#FFEA0303" BorderBrush="#FFEC1010" OpacityMask="Black" ValueChanged="Vol_ValueChanged" ToolTip="Volume"/>
+        <TextBlock Margin="20,2,20,10" FontSize="12" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" FontFamily="Bahnschrift Light">Volume :</TextBlock>
+        <Slider Cursor="ScrollWE"  Margin="20,2,20,10" Name="Vol" Width="350" Minimum="0" Maximum="100" Value="50" Background="Black" Foreground="#FFEA0303" BorderBrush="#FFFF0202" OpacityMask="Black" ValueChanged="Vol_ValueChanged" ToolTip="Volume"/>
 
         <!-- Progress BAR -->
-        <ProgressBar Margin="20,10,20,10" x:Name="prog" Height="20" Width="460" Value="0" ToolTip="Progress Bar">
-            <ProgressBar.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="1"/>
-                    <GradientStop Color="#FF13FF00" Offset="0"/>
-                </LinearGradientBrush>
-            </ProgressBar.Foreground>
-            <ProgressBar.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="#FF88FF00" Offset="1"/>
-                </LinearGradientBrush>
-            </ProgressBar.Background>
-        </ProgressBar>
+        <StackPanel>
+            <TextBlock FontSize="12" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Bahnschrift Light">Progress Bar</TextBlock>
+            <ProgressBar Margin="20,2,20,10" x:Name="prog" Height="20" Width="450" Value="0" ToolTip="Progress Bar" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <ProgressBar.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="1"/>
+                        <GradientStop Color="#FF5B00FF" Offset="0"/>
+                    </LinearGradientBrush>
+                </ProgressBar.Foreground>
+                <ProgressBar.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FF88FF00" Offset="1"/>
+                    </LinearGradientBrush>
+                </ProgressBar.Background>
+            </ProgressBar>
+        </StackPanel>
 
     </WrapPanel>
 
