@@ -14,9 +14,6 @@ using System.Windows.Threading;
 
 namespace Mon_Player_Audio
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MediaPlayer player = new MediaPlayer();
@@ -28,7 +25,6 @@ namespace Mon_Player_Audio
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += Update;
             timer.Start();
-
         }
 
         private void Update(object sender, EventArgs e)
@@ -45,7 +41,6 @@ namespace Mon_Player_Audio
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Filter = "MP3 files (*.mp3)|*.mp3|All files (*.*)|*.*";
-
             if (fileDialog.ShowDialog() == true)
             {
                 player.Open(new System.Uri(fileDialog.FileName));

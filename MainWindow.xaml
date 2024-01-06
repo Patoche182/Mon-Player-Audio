@@ -8,64 +8,67 @@
         Title="Mon Player Audio" Height="300" Width="500" ResizeMode="NoResize">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-            <GradientStop Color="Black" Offset="0.15"/>
-            <GradientStop Color="#FF00FFF9" Offset="0.9"/>
+            <GradientStop Color="Black" Offset="0.85"/>
+            <GradientStop Color="#FF88FF00" Offset="0.1"/>
         </LinearGradientBrush>
     </Window.Background>
     <WrapPanel>
 
-        <Label Content="Player Audio" Width="500" Height="50" FontSize="24" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+        <!-- Zone Ouvrir un fichier -->
+        <Label Content="Player Audio" Width="500" Height="50" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
-                    <GradientStop Color="#FF65E400" Offset="1"/>
+                    <GradientStop Color="#FF003EFF" Offset="1"/>
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
         <TextBox Margin="10" Name="FilePath" Width="300" Height="25" Text="Ouvir un fichier mp3..." VerticalAlignment="Center"/>
 
-        <Button Margin="10" Name="OpenFile" Content="Ouvrir" HorizontalAlignment="Center" VerticalAlignment="Center" Width="140" Height="25" Click="OpenFile_Click" Foreground="White" FontWeight="Bold" >
+        <!-- Bouton OPEN -->
+        <Button Margin="10" Name="OpenFile" Content="Ouvrir" HorizontalAlignment="Center" VerticalAlignment="Center" Width="140" Height="25" Click="OpenFile_Click" Foreground="#FF080000" FontWeight="Bold" FontSize="14" Background="{x:Null}" BorderBrush="Black" ToolTip="Open File" Cursor="Hand" BorderThickness="2,2,2,2" />
+
+        <!-- Bouton PLAY -->
+        <Button Margin="10" x:Name="Play" Content="Play" HorizontalAlignment="Center" VerticalAlignment="Center" Width="140" Height="50" Click="Play_Click"  Foreground="White" FontWeight="Bold" FontSize="18" Background="Black" ToolTip="Play" />
+
+        <!-- Bouton PAUSE -->
+        <Button Margin="10" x:Name="Pause" Content="Pause" HorizontalAlignment="Center" VerticalAlignment="Center" Width="140" Height="50" Click="Pause_Click"  Foreground="White" FontWeight="Bold" FontSize="18" ToolTip="Pause" >
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FFE400FD" Offset="1"/>
+                    <GradientStop Color="Black" Offset="1"/>
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
 
-        <Button Margin="10" x:Name="Play" Content="Play" HorizontalAlignment="Center" VerticalAlignment="Center" Width="140" Height="50" Click="Play_Click"  Foreground="White" FontWeight="Bold" FontSize="18" >
+        <!-- Bouton STOP -->
+        <Button Margin="10" x:Name="Stop" Content="Stop" HorizontalAlignment="Center" VerticalAlignment="Center" Width="140" Height="50" Click="Stop_Click"  Foreground="White" FontWeight="Bold" FontSize="18" ToolTip="Stop" >
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF00FD27" Offset="1"/>
+                    <GradientStop Color="Black" Offset="1"/>
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
 
-        <Button Margin="10" x:Name="Pause" Content="Pause" HorizontalAlignment="Center" VerticalAlignment="Center" Width="140" Height="50" Click="Pause_Click"  Foreground="White" FontWeight="Bold" FontSize="18" >
-            <Button.Background>
+        <!-- Sliders VOLUME -->
+        <Slider Margin="20,30,20,10" Name="Vol" Width="460" Minimum="0" Maximum="100" Value="50" Background="Black" Foreground="#FFEA0303" BorderBrush="#FFEC1010" OpacityMask="Black" ValueChanged="Vol_ValueChanged" ToolTip="Volume"/>
+
+        <!-- Progress BAR -->
+        <ProgressBar Margin="20,10,20,10" x:Name="prog" Height="20" Width="460" Value="0" ToolTip="Progress Bar">
+            <ProgressBar.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF00FD27" Offset="1"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF13FF00" Offset="0"/>
                 </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-
-        <Button Margin="10" x:Name="Stop" Content="Stop" HorizontalAlignment="Center" VerticalAlignment="Center" Width="140" Height="50" Click="Stop_Click"  Foreground="White" FontWeight="Bold" FontSize="18" >
-            <Button.Background>
+            </ProgressBar.Foreground>
+            <ProgressBar.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF00FD27" Offset="1"/>
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF88FF00" Offset="1"/>
                 </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-
-        <Slider Margin="10" Name="Vol" Width="480" Minimum="0" Maximum="100" Value="50" Background="#FF007371" Foreground="#FFEA0303" BorderBrush="#FFEC1010" OpacityMask="Black" ValueChanged="Vol_ValueChanged"/>
-        <ProgressBar x:Name="prog" Height="20" Width="480" Margin="10" Value="0"/>
-
-
-
-
+            </ProgressBar.Background>
+        </ProgressBar>
 
     </WrapPanel>
 
