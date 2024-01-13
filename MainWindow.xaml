@@ -69,13 +69,13 @@
                 <ProgressBar.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="1"/>
-                        <GradientStop Color="#FF5B00FF" Offset="0"/>
+                        <GradientStop Color="#FFFFAF00" Offset="0"/>
                     </LinearGradientBrush>
                 </ProgressBar.Foreground>
                 <ProgressBar.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black"/>
-                        <GradientStop Color="#FF88FF00" Offset="1"/>
+                        <GradientStop Color="#FF00FFED" Offset="1"/>
                     </LinearGradientBrush>
                 </ProgressBar.Background>
             </ProgressBar>
