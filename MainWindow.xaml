@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mon_Player_Audio"
         mc:Ignorable="d"
-        Title="My Audio Player" Height="350" Width="550" ResizeMode="NoResize">
+        Title="My Audio Player" Height="300" Width="500" ResizeMode="NoResize">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="Black" Offset="0.85"/>
@@ -19,7 +19,7 @@
             <Label.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="1"/>
-                    <GradientStop Color="#FFA91010" Offset="0"/>
+                    <GradientStop Color="#FF00FF6D" Offset="0"/>
                 </LinearGradientBrush>
             </Label.Background>
         </Label>
@@ -40,7 +40,7 @@
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
-                    <GradientStop Color="#FFF11212" Offset="1"/>
+                    <GradientStop Color="#FF00FF6D" Offset="1"/>
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
@@ -50,7 +50,7 @@
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FFF11212" Offset="1"/>
+                    <GradientStop Color="#FF00FF6D" Offset="1"/>
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
@@ -60,7 +60,7 @@
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FFF11212" Offset="1"/>
+                    <GradientStop Color="#FF00FF6D" Offset="1"/>
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
